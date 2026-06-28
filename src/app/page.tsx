@@ -83,18 +83,18 @@ export default function Home() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="flex flex-wrap justify-center lg:justify-start gap-4 pt-2 text-xs font-bold text-[#1E4620]"
+              className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-4 pt-2 text-[10px] sm:text-xs font-bold text-[#1E4620]"
             >
-              <div className="flex items-center gap-1.5 bg-[#1E4620]/5 px-3 py-2 rounded-xl">
-                <Truck className="h-4 w-4 text-[#8F250C]" />
+              <div className="flex items-center gap-1 sm:gap-1.5 bg-[#1E4620]/5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl">
+                <Truck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#8F250C]" />
                 <span>⚡️ 2 घंटे में डिलीवरी</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-[#1E4620]/5 px-3 py-2 rounded-xl">
-                <ShieldCheck className="h-4 w-4 text-[#E5A93B]" />
+              <div className="flex items-center gap-1 sm:gap-1.5 bg-[#1E4620]/5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl">
+                <ShieldCheck className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#E5A93B]" />
                 <span>📦 नकद भुगतान (COD)</span>
               </div>
-              <div className="flex items-center gap-1.5 bg-[#1E4620]/5 px-3 py-2 rounded-xl">
-                <CheckCircle2 className="h-4 w-4 text-[#1E4620]" />
+              <div className="flex items-center gap-1 sm:gap-1.5 bg-[#1E4620]/5 px-2 sm:px-3 py-1.5 sm:py-2 rounded-xl">
+                <CheckCircle2 className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-[#1E4620]" />
                 <span>🌾 100% शुद्ध एवं ताज़ा</span>
               </div>
             </motion.div>
@@ -176,14 +176,14 @@ export default function Home() {
             <button
               key={cat.id}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-5 py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all whitespace-nowrap border cursor-pointer ${
+              className={`px-3 sm:px-5 py-2 sm:py-2.5 rounded-full font-semibold text-xs sm:text-sm transition-all whitespace-nowrap border cursor-pointer ${
                 activeCategory === cat.id
                   ? 'bg-[#8F250C] text-[#FFFDF9] border-[#8F250C] shadow-md'
                   : 'bg-[#FFFDF9] text-[#1E4620] border-[#8F250C]/15 hover:bg-[#8F250C]/5'
               }`}
             >
               <span className="font-serif font-black">{cat.name}</span>
-              <span className="block text-[9px] font-normal opacity-85 leading-tight">{cat.englishName}</span>
+              <span className="block text-[8px] sm:text-[9px] font-normal opacity-85 leading-tight">{cat.englishName}</span>
             </button>
           ))}
         </div>

@@ -98,10 +98,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => addToCart(product)}
-                className="px-3 py-1.5 font-bold hover:bg-[#A52E12] transition-colors text-xs flex items-center gap-1 cursor-pointer"
+                className="px-2 sm:px-3 py-1.5 font-bold hover:bg-[#A52E12] transition-colors text-xs flex items-center gap-1 cursor-pointer"
               >
                 <Plus className="h-3.5 w-3.5" />
-                <span>{quantity} Added</span>
+                <span className="whitespace-nowrap hidden sm:inline">{quantity} Added</span>
+                <span className="whitespace-nowrap sm:hidden">{quantity}</span>
               </motion.button>
             </div>
           ) : (
@@ -109,10 +110,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               whileTap={{ scale: 0.95 }}
               onClick={() => product.inStock && addToCart(product)}
               disabled={!product.inStock}
-              className="bg-[#1E4620] hover:bg-[#2A5C2D] text-[#FFFDF9] px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm flex items-center gap-1 cursor-pointer disabled:opacity-50"
+              className="bg-[#1E4620] hover:bg-[#2A5C2D] text-[#FFFDF9] px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm flex items-center gap-1 cursor-pointer disabled:opacity-50"
             >
               <Plus className="h-3.5 w-3.5" />
-              <span>खरीदें (Add)</span>
+              <span className="whitespace-nowrap hidden sm:inline">खरीदें (Add)</span>
+              <span className="whitespace-nowrap sm:hidden">Add</span>
             </motion.button>
           )}
         </div>

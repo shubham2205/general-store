@@ -31,8 +31,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#FFFDF9]/95 backdrop-blur-md border-b-2 border-[#8F250C]/20 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20 gap-4">
+      <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 gap-2 sm:gap-4">
           
           {/* Logo & Brand */}
           <Link href="/" className="flex items-center gap-2 group shrink-0">
@@ -43,12 +43,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <Store className="h-6 w-6" />
             </motion.div>
-            <div className="flex flex-col">
-              <span className="font-serif text-lg sm:text-xl md:text-2xl font-bold text-[#8F250C] tracking-wide leading-none group-hover:text-[#A0250C] transition-colors">
+            <div className="flex flex-col truncate">
+              <span className="font-serif text-base sm:text-xl md:text-2xl font-bold text-[#8F250C] tracking-wide leading-none group-hover:text-[#A0250C] transition-colors truncate">
                 Mithila Laxmi
               </span>
-              <span className="font-serif text-[10px] sm:text-xs text-[#1E4620] font-semibold tracking-wider uppercase">
-                General Store • मिथिला लक्ष्मी
+              <span className="font-serif text-[9px] sm:text-[10px] md:text-xs text-[#1E4620] font-semibold tracking-wider uppercase truncate">
+                General Store <span className="hidden sm:inline">• मिथिला लक्ष्मी</span>
               </span>
             </div>
           </Link>
@@ -92,7 +92,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </nav>
 
           {/* Action Buttons (Cart & Mobile Menu) */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-3">
             {/* Cart Button */}
             {onCartToggle && (
               <motion.button
