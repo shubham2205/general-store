@@ -33,7 +33,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-[#FFFDF9] text-gray-800">
+      <body className="min-h-full flex flex-col bg-[#FFFDF9] text-gray-800 overflow-x-hidden">
         <CartProvider>
           {children}
         </CartProvider>
