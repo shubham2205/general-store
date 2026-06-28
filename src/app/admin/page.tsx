@@ -11,7 +11,7 @@ import { MithilaBorder, MithilaDivider } from '../../components/MithilaPattern';
 export default function AdminDashboard() {
   const { placedOrders, updateOrderStatus } = useCart();
 
-  // Metrics calculations
+  // Metrics calculations        
   const totalSales = placedOrders
     .filter((order) => order.status === 'Delivered')
     .reduce((sum, order) => sum + order.total, 0);
@@ -40,14 +40,14 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen flex flex-col bg-[#FFFDF9]">
       <MithilaBorder position="bottom" className="sticky top-0 z-50 bg-[#FFFDF9]" />
-      
+
       <Navbar />
 
       <main className="flex-grow max-w-6xl mx-auto w-full px-4 sm:px-6 py-8 space-y-6">
-        
+
         {/* Back Link */}
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="inline-flex items-center gap-1.5 text-xs font-bold text-[#8F250C] hover:underline"
         >
           <ArrowLeft className="h-4 w-4" />
@@ -66,7 +66,7 @@ export default function AdminDashboard() {
 
         {/* Dashboard Metrics Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-          
+
           {/* Sales Card */}
           <div className="bg-white p-5 rounded-2xl border border-[#8F250C]/10 shadow-sm flex items-center justify-between">
             <div className="space-y-1">
@@ -118,8 +118,8 @@ export default function AdminDashboard() {
           ) : (
             <div className="space-y-6">
               {placedOrders.map((order) => (
-                <div 
-                  key={order.id} 
+                <div
+                  key={order.id}
                   className="bg-white rounded-2xl border border-[#8F250C]/10 shadow-sm overflow-hidden flex flex-col"
                 >
                   {/* Order Head */}
@@ -163,7 +163,7 @@ export default function AdminDashboard() {
 
                   {/* Order Details Body */}
                   <div className="p-4 sm:p-5 grid grid-cols-1 md:grid-cols-12 gap-6">
-                    
+
                     {/* Items Grid */}
                     <div className="md:col-span-6 space-y-3">
                       <h4 className="font-serif text-xs font-black text-gray-800 uppercase tracking-wider flex items-center gap-1.5">
@@ -193,7 +193,7 @@ export default function AdminDashboard() {
                         <MapPin className="h-4.5 w-4.5 text-[#8F250C]" />
                         <span>ग्राहक एवं डिलीवरी विवरण</span>
                       </h4>
-                      
+
                       <div className="border border-gray-100 rounded-xl p-4 space-y-3 text-xs font-semibold text-gray-600 bg-stone-50/50">
                         <div className="flex items-center gap-2">
                           <span className="text-gray-400">नाम:</span>
