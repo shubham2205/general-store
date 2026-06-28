@@ -35,7 +35,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         <div className="flex items-center justify-between h-20 gap-2 sm:gap-4">
           
           {/* Logo & Brand */}
-          <Link href="/" className="flex items-center gap-2 group shrink-0">
+          <Link href="/" className="flex items-center gap-2 group shrink-0 min-w-0">
             <motion.div
               whileHover={{ rotate: [0, -10, 10, -5, 5, 0] }}
               transition={{ duration: 0.5 }}

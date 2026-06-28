@@ -29,7 +29,7 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FFFDF9]">
+    <div className="min-h-screen w-full flex flex-col bg-[#FFFDF9] overflow-x-hidden">
       {/* Repeating Top Cultural Border */}
       <MithilaBorder position="bottom" className="sticky top-0 z-50 bg-[#FFFDF9]" />
 
@@ -41,7 +41,7 @@ export default function Home() {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#8F250C]/10 bg-gradient-to-b from-[#E5A93B]/5 to-transparent">
+      <section className="relative w-full overflow-hidden py-12 md:py-20 px-4 sm:px-6 lg:px-8 border-b border-[#8F250C]/10 bg-gradient-to-b from-[#E5A93B]/5 to-transparent">
         {/* Animated Background Sun */}
         <div className="absolute right-[-40px] top-[-20px] md:right-[5%] md:top-[10%] opacity-15 pointer-events-none">
           <MithilaSun size={250} />
@@ -158,7 +158,7 @@ export default function Home() {
       </section>
 
       {/* Product Catalog Section */}
-      <main id="catalog" className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
+      <main id="catalog" className="flex-grow w-full overflow-x-hidden max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-8">
         
         <div className="text-center space-y-2">
           <h2 className="font-serif text-2xl sm:text-3xl font-black text-[#8F250C]">
