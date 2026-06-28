@@ -33,8 +33,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     >
       {/* Discount Badge */}
       {discount > 0 && (
-        <div className="absolute top-3 left-3 z-10 bg-[#E5A93B] text-[#8F250C] px-2.5 py-1 rounded-full text-xs font-black flex items-center gap-1 shadow-sm">
-          <Percent className="h-3 w-3" />
+        <div className="absolute top-2 left-2 sm:top-3 sm:left-3 z-10 bg-[#E5A93B] text-[#8F250C] px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-full text-[9px] sm:text-xs font-black flex items-center gap-0.5 sm:gap-1 shadow-sm">
+          <Percent className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
           <span>{discount}% OFF</span>
         </div>
       )}
@@ -49,7 +49,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       )}
 
       {/* Product Image */}
-      <div className="relative h-48 w-full bg-stone-100 overflow-hidden">
+      <div className="relative h-32 sm:h-48 w-full bg-stone-100 overflow-hidden">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.image}
@@ -61,34 +61,34 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       </div>
 
       {/* Product Details */}
-      <div className="p-4 flex flex-col flex-grow">
+      <div className="p-2 sm:p-4 flex flex-col flex-grow">
         {/* Unit badge */}
-        <span className="inline-block self-start text-[10px] font-bold tracking-wider uppercase bg-[#1E4620]/10 text-[#1E4620] px-2 py-0.5 rounded-md mb-2">
+        <span className="inline-block self-start text-[9px] sm:text-[10px] font-bold tracking-wider uppercase bg-[#1E4620]/10 text-[#1E4620] px-1.5 py-0.5 sm:px-2 sm:py-0.5 rounded-md mb-1 sm:mb-2">
           {product.unit}
         </span>
 
         {/* English Name */}
-        <h3 className="font-sans font-bold text-gray-800 text-base leading-tight">
+        <h3 className="font-sans font-bold text-gray-800 text-xs sm:text-base leading-tight line-clamp-2">
           {product.name}
         </h3>
 
         {/* Hindi Name */}
-        <h4 className="font-serif text-sm font-semibold text-[#8F250C] mt-0.5">
+        <h4 className="font-serif text-[10px] sm:text-sm font-semibold text-[#8F250C] mt-0.5 line-clamp-1">
           {product.hindiName}
         </h4>
 
         {/* Description */}
-        <p className="text-gray-500 text-xs mt-2 line-clamp-2 leading-relaxed flex-grow">
+        <p className="hidden sm:block text-gray-500 text-xs mt-2 line-clamp-2 leading-relaxed flex-grow">
           {product.description}
         </p>
 
         {/* Pricing & Add to Cart */}
-        <div className="mt-4 flex items-center justify-between pt-3 border-t border-[#8F250C]/5">
+        <div className="mt-2 sm:mt-4 flex items-center justify-between pt-2 sm:pt-3 border-t border-[#8F250C]/5">
           <div className="flex flex-col">
-            <span className="text-xs text-gray-400 line-through leading-none mb-0.5">
+            <span className="text-[9px] sm:text-xs text-gray-400 line-through leading-none mb-0.5">
               {product.originalPrice ? `₹${product.originalPrice}` : ''}
             </span>
-            <span className="text-lg font-black text-[#1E4620] leading-none">
+            <span className="text-sm sm:text-lg font-black text-[#1E4620] leading-none">
               ₹{product.price}
             </span>
           </div>
@@ -98,9 +98,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={() => addToCart(product)}
-                className="px-2 sm:px-3 py-1.5 font-bold hover:bg-[#A52E12] transition-colors text-xs flex items-center gap-1 cursor-pointer"
+                className="px-2 sm:px-3 py-1 sm:py-1.5 font-bold hover:bg-[#A52E12] transition-colors text-[10px] sm:text-xs flex items-center gap-0.5 sm:gap-1 cursor-pointer"
               >
-                <Plus className="h-3.5 w-3.5" />
+                <Plus className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                 <span className="whitespace-nowrap hidden sm:inline">{quantity} Added</span>
                 <span className="whitespace-nowrap sm:hidden">{quantity}</span>
               </motion.button>
@@ -110,9 +110,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               whileTap={{ scale: 0.95 }}
               onClick={() => product.inStock && addToCart(product)}
               disabled={!product.inStock}
-              className="bg-[#1E4620] hover:bg-[#2A5C2D] text-[#FFFDF9] px-3 sm:px-4 py-1.5 rounded-full text-xs font-bold transition-all shadow-sm flex items-center gap-1 cursor-pointer disabled:opacity-50"
+              className="bg-[#1E4620] hover:bg-[#2A5C2D] text-[#FFFDF9] px-2 sm:px-4 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-xs font-bold transition-all shadow-sm flex items-center gap-0.5 sm:gap-1 cursor-pointer disabled:opacity-50"
             >
-              <Plus className="h-3.5 w-3.5" />
+              <Plus className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
               <span className="whitespace-nowrap hidden sm:inline">खरीदें (Add)</span>
               <span className="whitespace-nowrap sm:hidden">Add</span>
             </motion.button>
